@@ -1,0 +1,18 @@
+name: OpenSpeedTest
+version: v2.0.2
+slug: openspeedtest
+description: Free & Open-Source HTML5 Network Performance Estimation Tool
+arch:
+  - armv7
+  - amd64
+  - i386
+image: openspeedtest/latest
+init: false
+ports:
+  3000/tcp: 3000
+  3001/tcp: null
+ports_description:
+  3000/tcp: HTTP
+  3001/tcp: HTTPS
+url: https://hub.docker.com/r/openspeedtest/latest
+webui: http://[HOST]:[PORT:3000]
