@@ -1,4 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: tronikos' Home Assistant add-ons repository
+name: tronikos Home Assistant add-ons repository
 url: 'https://github.com/tronikos/home-assistant-addons'
 maintainer: @tronikos
