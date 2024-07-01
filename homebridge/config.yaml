@@ -1,5 +1,5 @@
 name: Homebridge
-version: 2024-06-27
+version: "2024-06-27"
 slug: homebridge
 description: Homebridge - HomeKit support for the impatient
 arch:
