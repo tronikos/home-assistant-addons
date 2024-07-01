@@ -6,6 +6,10 @@
 
 This repository contains the following add-ons:
 
+### [Homebridge](./homebridge)
+
+_Homebridge - HomeKit support for the impatient._
+
 ### [OpenSpeedTest](./openspeedtest)
 
 _Free & Open-Source HTML5 Network Performance Estimation Tool._

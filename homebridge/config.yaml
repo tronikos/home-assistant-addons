@@ -1,0 +1,22 @@
+name: Homebridge
+version: 2024-06-27
+slug: homebridge
+description: Homebridge - HomeKit support for the impatient
+arch:
+  - armv7
+  - amd64
+image: homebridge/homebridge
+host_network: true
+init: false
+map:
+  - type: addon_config
+    read_only: false
+    path: "/homebridge"
+backup_exclude:
+  - "node_modules"
+ports:
+  8581/tcp: 8581
+ports_description:
+  8581/tcp: Homebridge UI
+url: https://hub.docker.com/r/homebridge/homebridge
+webui: http://[HOST]:[PORT:8581]
