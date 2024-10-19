@@ -24,7 +24,7 @@ jobs:
 
       - name: Update Docker Versions
         id: update-docker-versions
-        run: python update-version.py
+        run: python update-versions.py
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
