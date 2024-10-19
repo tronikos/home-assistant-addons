@@ -1,0 +1,36 @@
+name: Update Docker Image Version
+
+on:
+  schedule:
+    - cron: '0 10 * * 6'  # Run every Saturday at 10 AM
+  workflow_dispatch:  # Allow manual triggering of the workflow
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12' 
+
+      - name: Install Dependencies
+        run: |
+          pip install pyyaml requests
+
+      - name: Update Docker Versions
+        id: update-docker-versions
+        run: python update-version.py
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          title: 'Update Docker image versions'
+          body: 'Automated update of Docker image versions.'
+          base: main
+          branch: update-docker-versions
+          commit-message: 'Update Docker image versions in config.yaml files'
