@@ -2,7 +2,7 @@ name: Update Docker Image Version
 
 on:
   schedule:
-    - cron: '0 10 * * 6'  # Run every Saturday at 10 AM
+    - cron: '19 19 * * *'
   workflow_dispatch:  # Allow manual triggering of the workflow
 
 jobs:
