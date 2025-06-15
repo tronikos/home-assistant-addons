@@ -10,9 +10,9 @@ _Homebridge - HomeKit support for the impatient._
 
 ## About
 
-This Ubuntu Linux based Docker image allows you to run Nfarina's Homebridge on your home network which emulates the iOS HomeKit API.
+This uses the latest official unmodified [Docker image of Homebridge](https://hub.docker.com/r/homebridge/homebridge) as a Home Assistant Add-on.
 
-See https://hub.docker.com/r/homebridge/homebridge
+Allows running Nfarina's Homebridge on your home network which emulates the iOS HomeKit API.
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-no-red.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
