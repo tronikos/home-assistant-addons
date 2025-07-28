@@ -1,5 +1,5 @@
 arch:
-- armv7
+- aarch64
 - amd64
 description: A deluxe latency measurement tool
 image: linuxserver/smokeping

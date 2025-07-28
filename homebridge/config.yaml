@@ -1,6 +1,7 @@
 arch:
-- armv7
+- aarch64
 - amd64
+- armv7
 backup_exclude:
 - node_modules
 description: Homebridge - HomeKit support for the impatient
