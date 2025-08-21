@@ -13,6 +13,7 @@ map:
   read_only: false
   type: addon_config
 name: Homebridge
+panel_icon: mdi:bridge
 ports:
   8581/tcp: 8581
 ports_description:
