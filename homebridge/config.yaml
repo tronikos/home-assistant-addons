@@ -20,5 +20,5 @@ ports_description:
   8581/tcp: Homebridge UI
 slug: homebridge
 url: https://hub.docker.com/r/homebridge/homebridge
-version: '2025-12-06'
+version: '2025-12-12'
 webui: http://[HOST]:[PORT:8581]
