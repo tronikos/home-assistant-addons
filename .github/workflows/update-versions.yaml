@@ -5,6 +5,10 @@ on:
     - cron: '19 19 * * *'
   workflow_dispatch:  # Allow manual triggering of the workflow
 
+# Permissions required to push changes to the repository
+permissions:
+  contents: write
+
 jobs:
   update-version:
     runs-on: ubuntu-latest
@@ -16,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.12' 
+          python-version: '3.12'
 
       - name: Install Dependencies
         run: |
@@ -26,11 +30,9 @@ jobs:
         id: update-docker-versions
         run: python update-versions.py
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v8
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          title: 'Update Docker image versions'
-          body: 'Automated update of Docker image versions.'
-          base: main
-          branch: update-docker-versions
-          commit-message: 'Update Docker image versions in config.yaml files'
+          commit_message: 'Update Docker image versions in config.yaml files'
+          branch: main
+          file_pattern: '**/config.yaml' # Only commit changes to config.yaml files
