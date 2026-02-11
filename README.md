@@ -10,6 +10,10 @@ This repository contains the following add-ons:
 
 _Homebridge - HomeKit support for the impatient._
 
+### [Matterbridge](./matterbridge)
+
+_A Matter plugin manager that allows you to have all your Matter devices up and running in minutes without dealing with complex pairing processes._
+
 ### [OpenSpeedTest](./openspeedtest)
 
 _Free & Open-Source HTML5 Network Performance Estimation Tool._
