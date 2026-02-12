@@ -6,6 +6,8 @@ backup_exclude:
 description: A Matter plugin manager that allows you to have all your Matter devices up and running in minutes without dealing with complex pairing processes.
 host_network: true
 image: luligu/matterbridge
+ingress: true
+ingress_port: 8283
 init: false
 map:
 - path: /root
@@ -13,13 +15,6 @@ map:
   type: addon_config
 name: Matterbridge
 panel_icon: mdi:bridge
-ports:
-  8283/tcp: 8283
-ports_description:
-  8283/tcp: HTTP
-ingress: true
-ingress_port: 8283
 slug: matterbridge
 url: https://hub.docker.com/r/luligu/matterbridge
 version: 3.5.3
-webui: http://[HOST]:[PORT:8283]
