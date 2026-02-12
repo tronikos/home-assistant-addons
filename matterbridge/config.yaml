@@ -3,7 +3,8 @@ arch:
 - amd64
 backup_exclude:
 - .npm
-description: A Matter plugin manager that allows you to have all your Matter devices up and running in minutes without dealing with complex pairing processes.
+description: A Matter plugin manager that allows you to have all your Matter devices
+  up and running in minutes without dealing with complex pairing processes.
 host_network: true
 image: luligu/matterbridge
 ingress: true
@@ -17,4 +18,4 @@ name: Matterbridge
 panel_icon: mdi:bridge
 slug: matterbridge
 url: https://hub.docker.com/r/luligu/matterbridge
-version: 3.5.3
+version: dev-3.5.4
