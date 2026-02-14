@@ -18,4 +18,4 @@ name: Matterbridge
 panel_icon: mdi:bridge
 slug: matterbridge
 url: https://hub.docker.com/r/luligu/matterbridge
-version: 2026.2.4
+version: dev-3.5.5
