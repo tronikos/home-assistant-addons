@@ -8,7 +8,7 @@ def get_latest_tag(repo_name):
     of the most recently updated tag on that page that is not a pre-release.
     """
     print(f"  Fetching first page of tags for {repo_name}...")
-    tags_url = f'https://hub.docker.com/v2/repositories/{repo_name}/tags'
+    tags_url = f'https://hub.docker.com/v2/repositories/{repo_name}/tags?page_size=100'
 
     try:
         response = requests.get(tags_url)
@@ -23,7 +23,7 @@ def get_latest_tag(repo_name):
         return None
 
     # --- Filtering Logic ---
-    pre_release_keywords = ['beta', 'alpha', 'rc']
+    pre_release_keywords = ['beta', 'alpha', 'rc', 'legacy', 'dev']
     candidate_tags = []
 
     for tag in tags:
