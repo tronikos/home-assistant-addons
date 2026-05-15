@@ -23,7 +23,7 @@ def get_latest_tag(repo_name):
         return None
 
     # --- Filtering Logic ---
-    pre_release_keywords = ['beta', 'alpha', 'rc', 'legacy', 'dev']
+    pre_release_keywords = ['beta', 'alpha', 'rc', 'legacy', 'dev', 'synology']
     candidate_tags = []
 
     for tag in tags:
