@@ -17,3 +17,7 @@ _Free & Open-Source HTML5 Network Performance Estimation Tool._
 ### [SmokePing](./smokeping)
 
 _SmokePing is a deluxe latency measurement tool. It can measure, store and display latency, latency distribution and packet loss._
+
+### [syslog-ng](./syslog-ng)
+
+_A clean, lightweight syslog receiver storing logs from local devices directly into `/share/messages`._
