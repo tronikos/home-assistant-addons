@@ -11,8 +11,6 @@ environment:
 arch:
   - aarch64
   - amd64
-  - armv7
-boot: auto
 services:
   - mqtt:need
 options:
