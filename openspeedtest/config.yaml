@@ -1,8 +1,6 @@
 arch:
 - aarch64
 - amd64
-- armv7
-- i386
 description: Free & Open-Source HTML5 Network Performance Estimation Tool
 image: openspeedtest/latest
 init: false
