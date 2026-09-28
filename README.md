@@ -27,3 +27,5 @@ _SmokePing is a deluxe latency measurement tool. It can measure, store and displ
 _A clean, lightweight syslog receiver storing logs from local devices directly into `/share/messages`._
 
 The Samba add-on's icon and logo come from the official [Samba share add-on](https://github.com/home-assistant/addons/tree/master/samba) (Apache-2.0).
+
+The syslog-ng add-on's icon comes from the [syslog-ng documentation site](https://github.com/syslog-ng/syslog-ng.github.io) (MIT).
