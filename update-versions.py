@@ -67,12 +67,18 @@ for root, dirs, files in os.walk('.'):
 
             if 'image' in config:
                 print(f"Processing {file_path}...")
+                current_version = config.get('version')
+                # An add-on pinned to a named tag such as 'edge' stays there
+                # until its version is changed to a numbered release by hand.
+                if not any(char.isdigit() for char in str(current_version)):
+                    print(f"  Skipping: pinned to the named tag '{current_version}'.")
+                    print("-" * 20)
+                    continue
                 print(f"Checking for updates to image: {config['image']}")
 
                 latest_tag = get_latest_tag(config['image'])
                 
                 if latest_tag:
-                    current_version = config.get('version')
                     print(f"  Current version: {current_version}, Latest available: {latest_tag}")
                     if current_version != latest_tag:
                         print(f"  UPDATE FOUND: Updating from {current_version} to {latest_tag}")

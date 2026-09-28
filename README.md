@@ -14,6 +14,10 @@ _Homebridge - HomeKit support for the impatient._
 
 _Free & Open-Source HTML5 Network Performance Estimation Tool._
 
+### [Samba](./samba)
+
+_Samba file server for the Home Assistant folders, with multiple users and per-share access, configured in a YAML file._
+
 ### [SmokePing](./smokeping)
 
 _SmokePing is a deluxe latency measurement tool. It can measure, store and display latency, latency distribution and packet loss._
@@ -21,3 +25,5 @@ _SmokePing is a deluxe latency measurement tool. It can measure, store and displ
 ### [syslog-ng](./syslog-ng)
 
 _A clean, lightweight syslog receiver storing logs from local devices directly into `/share/messages`._
+
+The Samba add-on's icon and logo come from the official [Samba share add-on](https://github.com/home-assistant/addons/tree/master/samba) (Apache-2.0).

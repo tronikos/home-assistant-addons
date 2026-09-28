@@ -1,0 +1,44 @@
+name: Samba
+version: edge
+slug: samba
+description: >-
+  Samba file server for the Home Assistant folders, with multiple users and
+  per-share access, configured in a YAML file
+url: https://github.com/tronikos/home-assistant-addons/tree/main/samba
+image: crazymax/samba
+arch:
+  - aarch64
+  - amd64
+init: false
+host_network: true
+environment:
+  CONFIG_FILE: /config/config.yml
+  WSDD2_ENABLE: '1'
+  SAMBA_HOSTS_ALLOW: >-
+    127.0.0.1 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 169.254.0.0/16
+    fe80::/10 fc00::/7
+map:
+  - type: addon_config
+    path: /config
+    read_only: false
+  - type: homeassistant_config
+    path: /samba/config
+    read_only: false
+  - type: local_apps
+    path: /samba/addons
+    read_only: false
+  - type: all_app_configs
+    path: /samba/addon_configs
+    read_only: false
+  - type: share
+    path: /samba/share
+    read_only: false
+  - type: media
+    path: /samba/media
+    read_only: false
+  - type: backup
+    path: /samba/backup
+    read_only: false
+  - type: ssl
+    path: /samba/ssl
+    read_only: false
