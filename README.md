@@ -26,6 +26,12 @@ _SmokePing is a deluxe latency measurement tool. It can measure, store and displ
 
 _A clean, lightweight syslog receiver storing logs from local devices directly into `/share/messages`._
 
-The Samba add-on's icon and logo come from the official [Samba share add-on](https://github.com/home-assistant/addons/tree/master/samba) (Apache-2.0).
+## Icons
 
-The syslog-ng add-on's icon comes from the [syslog-ng documentation site](https://github.com/syslog-ng/syslog-ng.github.io) (MIT).
+| Add-on | Source |
+|---|---|
+| Homebridge | [`logos/homebridge-color-square.png`](https://github.com/homebridge/branding/blob/HEAD/logos/homebridge-color-square.png) in [homebridge/branding](https://github.com/homebridge/branding) (Apache-2.0), resized |
+| OpenSpeedTest | [`assets/images/icons/android-chrome-192x192.png`](https://github.com/openspeedtest/Speed-Test/blob/HEAD/assets/images/icons/android-chrome-192x192.png) in [openspeedtest/Speed-Test](https://github.com/openspeedtest/Speed-Test) (MIT) |
+| Samba | `icon.png` and `logo.png` of the official [Samba share add-on](https://github.com/home-assistant/addons/tree/master/samba) (Apache-2.0) |
+| SmokePing | [`linuxserver.io/img/smokeping-banner.png`](https://github.com/linuxserver/docker-templates/blob/HEAD/linuxserver.io/img/smokeping-banner.png) in [linuxserver/docker-templates](https://github.com/linuxserver/docker-templates) (GPL-3.0) |
+| syslog-ng | [`assets/images/favicons/android-chrome-144x144.png`](https://github.com/syslog-ng/syslog-ng.github.io/blob/HEAD/assets/images/favicons/android-chrome-144x144.png) in [syslog-ng/syslog-ng.github.io](https://github.com/syslog-ng/syslog-ng.github.io) (MIT) |
