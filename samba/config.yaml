@@ -14,6 +14,9 @@ host_network: true
 environment:
   CONFIG_FILE: /config/config.yml
   WSDD2_ENABLE: '1'
+  # See "Discovery" in DOCS.md: the interface is this host's LAN NIC.
+  WSDD2_INTERFACE: eno0
+  WSDD2_HOSTNAME: homeassistant
   SAMBA_HOSTS_ALLOW: >-
     127.0.0.1 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 169.254.0.0/16
     fe80::/10 fc00::/7

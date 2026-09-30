@@ -87,6 +87,16 @@ Windows finds the server through WS-Discovery (WSDD2). NetBIOS is disabled,
 so there is no network browsing over NetBIOS and no master browser election.
 Other clients can connect with `smb://<home-assistant-ip>/<share>`.
 
+WSDD2 announces the server as `homeassistant` and answers only on `eno0`
+(`WSDD2_HOSTNAME` and `WSDD2_INTERFACE` in `config.yaml`). Without an
+interface it binds every Docker veth interface and rebinds, with a log entry,
+whenever a container starts or stops. Its LLMNR TCP listener always logs
+`bind: Address in use` once at startup, because the host's resolver already
+holds port 5355 on the host network; name lookups still work through the host.
+If your host's LAN interface isn't `eno0` (check with `ip -br link` in the
+Terminal add-on), change `WSDD2_INTERFACE`, since environment variables of an
+image-only add-on can't be set from its options.
+
 ## Image version
 
 The add-on runs the `edge` tag. The `4.23.8` release also starts a `socklog`
