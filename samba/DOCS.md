@@ -47,6 +47,9 @@ global:
   # location each check rewrites these files on the Home Assistant disk.
   - "lock directory = /dev/shm"
   - "cache directory = /dev/shm"
+  - "state directory = /dev/shm"
+  - "private dir = /dev/shm"
+  - "passdb backend = tdbsam:/data/lib/private/passdb.tdb"
   # Home Assistant's folders are owned by root.
   - "force user = root"
   - "force group = root"
