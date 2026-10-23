@@ -10,7 +10,7 @@ init: false
 map:
 - path: /homebridge
   read_only: false
-  type: addon_config
+  type: app_config
 name: Homebridge
 panel_icon: mdi:bridge
 ports:
