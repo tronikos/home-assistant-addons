@@ -13,5 +13,5 @@ ports_description:
   3001/tcp: HTTPS
 slug: openspeedtest
 url: https://hub.docker.com/r/openspeedtest/latest
-version: v2.0.6
+version: v2.0.8
 webui: http://[HOST]:[PORT:3000]
