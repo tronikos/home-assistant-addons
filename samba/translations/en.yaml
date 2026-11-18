@@ -1,0 +1,76 @@
+configuration:
+  WSDD2_ENABLE:
+    name: Enable WSDD2
+    description: >-
+      Enable WS-Discovery and LLMNR so Windows clients discover the server
+      (1 = enabled, 0 = disabled).
+  WSDD2_INTERFACE:
+    name: WSDD2 interface
+    description: >-
+      Host LAN interface for WSDD2 to listen on (for example eno0 or end0;
+      check with ip -br link). Leave empty to listen on all non-Docker
+      interfaces.
+  WSDD2_HOSTNAME:
+    name: WSDD2 hostname
+    description: >-
+      Hostname announced by WSDD2 to Windows clients.
+  WSDD2_NETBIOS_NAME:
+    name: WSDD2 NetBIOS name
+    description: >-
+      NetBIOS name announced by WSDD2 and LLMNR.
+  SAMBA_WORKGROUP:
+    name: Workgroup
+    description: >-
+      NT domain or workgroup name used by Samba and WSDD2.
+  SAMBA_HOSTS_ALLOW:
+    name: Allowed hosts
+    description: >-
+      Space-separated list of IP addresses or CIDR networks allowed to connect.
+  SAMBA_INTERFACES:
+    name: Samba interfaces
+    description: >-
+      Space-separated interfaces or networks for Samba to bind to when set.
+  SAMBA_SERVER_STRING:
+    name: Server description
+    description: >-
+      Server description string shown to SMB clients (default: Docker Samba
+      Server).
+  SAMBA_LOG_LEVEL:
+    name: Samba log level
+    description: >-
+      Samba debug log level from 0 to 10 (default: 0).
+  SAMBA_FOLLOW_SYMLINKS:
+    name: Follow symlinks
+    description: >-
+      Allow following symbolic links inside shares (default: yes).
+  SAMBA_WIDE_LINKS:
+    name: Wide links
+    description: >-
+      Allow following symbolic links pointing outside the share path
+      (default: yes).
+  AVAHI_ENABLE:
+    name: Enable Avahi
+    description: >-
+      Enable mDNS/Zeroconf service discovery for Linux and macOS clients
+      (1 = enabled, 0 = disabled).
+  AVAHI_INTERFACES:
+    name: Avahi interfaces
+    description: >-
+      Comma-separated network interfaces Avahi is allowed to use.
+  AVAHI_NAME:
+    name: Avahi service name
+    description: >-
+      Service instance name advertised in Finder and mDNS browsers.
+  AVAHI_HOSTNAME:
+    name: Avahi hostname
+    description: >-
+      Avahi hostname without the .local suffix. Prefer Avahi service name to
+      avoid mDNS hostname conflicts with the host.
+  AVAHI_MODEL:
+    name: Avahi Finder model
+    description: >-
+      Device icon model advertised to macOS Finder (default: RackMac).
+  AVAHI_ADISK_NAME:
+    name: Avahi Time Machine share
+    description: >-
+      Share name advertised via _adisk._tcp for macOS Time Machine backups.

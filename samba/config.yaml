@@ -10,16 +10,37 @@ arch:
   - aarch64
   - amd64
 init: false
+legacy: true
 host_network: true
 environment:
   CONFIG_FILE: /config/config.yml
+options:
   WSDD2_ENABLE: '1'
-  # See "Discovery" in DOCS.md: the interface is this host's LAN NIC.
-  WSDD2_INTERFACE: eno0
+  WSDD2_INTERFACE: ''
   WSDD2_HOSTNAME: homeassistant
+  WSDD2_NETBIOS_NAME: homeassistant
+  SAMBA_WORKGROUP: WORKGROUP
   SAMBA_HOSTS_ALLOW: >-
     127.0.0.1 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 169.254.0.0/16
     fe80::/10 fc00::/7
+schema:
+  WSDD2_ENABLE: list(0|1)
+  WSDD2_INTERFACE: str
+  WSDD2_HOSTNAME: str
+  WSDD2_NETBIOS_NAME: str
+  SAMBA_WORKGROUP: str
+  SAMBA_HOSTS_ALLOW: str
+  SAMBA_INTERFACES: str?
+  SAMBA_SERVER_STRING: str?
+  SAMBA_LOG_LEVEL: int(0,10)?
+  SAMBA_FOLLOW_SYMLINKS: list(yes|no)?
+  SAMBA_WIDE_LINKS: list(yes|no)?
+  AVAHI_ENABLE: list(0|1)?
+  AVAHI_INTERFACES: str?
+  AVAHI_NAME: str?
+  AVAHI_HOSTNAME: str?
+  AVAHI_MODEL: str?
+  AVAHI_ADISK_NAME: str?
 map:
   - type: app_config
     path: /config

@@ -77,7 +77,9 @@ Add one `share` entry per folder you want to expose.
 
 By default only local networks can connect: `127.0.0.1 10.0.0.0/8
 172.16.0.0/12 192.168.0.0/16 169.254.0.0/16 fe80::/10 fc00::/7`. To allow
-other addresses, for example a VPN client, add a complete list to `global`:
+other addresses, for example a VPN client, update **Allowed hosts**
+(`SAMBA_HOSTS_ALLOW`) in the add-on's **Configuration** tab, or override
+`hosts allow` under `global` in `config.yml`:
 
 ```yaml
 global:
@@ -86,19 +88,23 @@ global:
 
 ## Discovery
 
-Windows finds the server through WS-Discovery (WSDD2). NetBIOS is disabled,
-so there is no network browsing over NetBIOS and no master browser election.
-Other clients can connect with `smb://<home-assistant-ip>/<share>`.
+Windows finds the server through WS-Discovery (WSDD2). NetBIOS is disabled in
+Samba, so there is no network browsing over NetBIOS and no master browser
+election. Other clients can connect with `smb://<home-assistant-ip>/<share>`,
+or enable Avahi (`AVAHI_ENABLE`) under optional settings in the add-on's
+**Configuration** tab for mDNS discovery on Linux and macOS.
 
-WSDD2 announces the server as `homeassistant` and answers only on `eno0`
-(`WSDD2_HOSTNAME` and `WSDD2_INTERFACE` in `config.yaml`). Without an
-interface it binds every Docker veth interface and rebinds, with a log entry,
-whenever a container starts or stops. Its LLMNR TCP listener always logs
-`bind: Address in use` once at startup, because the host's resolver already
-holds port 5355 on the host network; name lookups still work through the host.
-If your host's LAN interface isn't `eno0` (check with `ip -br link` in the
-Terminal add-on), change `WSDD2_INTERFACE`, since environment variables of an
-image-only add-on can't be set from its options.
+By default WSDD2 announces the server as `homeassistant` (`WSDD2_HOSTNAME` and
+`WSDD2_NETBIOS_NAME`) and listens on all non-Docker interfaces
+(`WSDD2_INTERFACE` left empty) so discovery works regardless of the host's NIC
+name (`eno0`, `end0`, `eth0`, etc.). Without an interface set, WSDD2 also binds
+the `hassio` bridge and rebinds, with log entries, whenever a container starts
+or stops. Set **WSDD2 interface** (`WSDD2_INTERFACE`) in the **Configuration**
+tab to your host's LAN interface (check with `ip -br link` in the Terminal
+add-on) to answer only on that interface and stop the rebind log entries. Its
+LLMNR TCP listener always logs `bind: Address in use` once at startup, because
+the host's resolver already holds port 5355 on the host network; name lookups
+still work through the host.
 
 ## Image version
 
